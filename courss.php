@@ -3,10 +3,8 @@
  <?php
 
  session_start();
- 
 
-
- if(!isset($_SESSION["active"]))
+    if(!isset($_SESSION["active"]))
     {
       header("location: index.php");
     }
@@ -51,7 +49,7 @@ require 'cnx.php';
 
     .side-bar {
       background-color: #fff;
-      height: 800px;
+      height: 930px;
       width:200px;
     }
 
@@ -59,7 +57,7 @@ require 'cnx.php';
       width: 70px;
     }
     .Logout{
-      transform: translateY(88Px);
+      /* transform: translateY(88Px); */
       margin-left: 26px;
     }
     
@@ -87,18 +85,14 @@ require 'cnx.php';
 
 <body>
 
-
-  <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX saidbar XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
   <main class="container-fluid  position-sticky top-0 start-0">
     <div class="row flex-nowrap">
 
     <?php include'side-bar.php';   ?>
 
-      <div class="col py-3">
+    <div class="col py-3">
 
-        <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX NAVBAR XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
-
-        <?php include'navbar.php';   ?>
+         <?php include'navbar.php';   ?>
         <div
           class=" d-flex main-container  flex-sm-row  flex-column  container bg-light  justify-content-between py-3">
           <div>
@@ -109,67 +103,60 @@ require 'cnx.php';
             <a href="formCours.php"> <button type="button" class="btn btn-info   text-light">ADD NEW COURSS</button></a>
           </div>
         
-        </div>
+    </div>
         <div class="divs2">
           <div id="page-content-wrapper">
-            <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX TABL XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
             <div class="bg-light navbar-light">
 
               <div class="container-fluid table-responsive">
               <table class="table" >
        
        <thead>
-    <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX PHP XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+
        <?php
-       //  xxxxxx th
+     
       foreach($courss as $key => $val){
-        
       }
       echo" <tr  class='align-middle border-5 border-light text-secondary 5'>
-     
-      
       <th> Title</th>
       <th>Description_</th>
       <th>Price </th>
       
-    </tr>";
+       </tr>";
       
        ?>
            </thead>
           <!-- xxxx td -->
-          <?php
-  $req="SELECT * FROM courss  ";
-    $quiry = mysqli_query($connect, $req); 
-        while( $a=mysqli_fetch_assoc( $quiry)){
-          $id=$a['id'];   
-        
-      
-       echo" <tr class='bg-white align-middle border-5 border-light' class='text-secondary'>
-     
-       
-       <td class='py-3'> ". $a['Title'] . "</td>
-       <td class='py-3'>{$a['Description_']}</td>
-       <td class='py-3'>{$a['Price']}</td>" ; ?>
-       <td class="py-3">
-       <a href="update_cours.php?id=<?php echo $a['id']; ?>" type="button" class="btn btn-sm">
-         <i class="fal fa-pen pe-2 text-info"></i>
-       </a>
-       </td>
-       <td>
-       <a href='delet-cours.php?id=<?php echo $a['id']; ?>' type='button' class='btn  btn-sm '>
-         <i class='fal fa-trash text-info'></i>
-       <a/>
-     </td>
-     </tr>
-     <?php
-    
-    }
-     ?>
-  
+            <?php
+                    $req="SELECT * FROM courss  ";
+                    $quiry = mysqli_query($connect, $req); 
+                    while( $a=mysqli_fetch_assoc( $quiry)){
+                      $id=$a['id'];   
+                
+                echo" <tr class='bg-white align-middle border-5 border-light' class='text-secondary'>
+                <td class='py-3'> ". $a['Title'] . "</td>
+                <td class='py-3'>{$a['Description_']}</td>
+                <td class='py-3'>{$a['Price']}</td>" ; ?>
+                <td class="py-3">
+                <a href="update_cours.php?id=<?php echo $a['id']; ?>" type="button" class="btn btn-sm">
+                  <i class="fal fa-pen pe-2 text-info"></i>
+                </a>
+                </td>
+                <td>
+                  <a href='delet-cours.php?id=<?php echo $a['id']; ?>' type='button' class='btn  btn-sm '>
+                  <i class='fal fa-trash text-info'></i>
+                    </a>
+                  </td>
+                </tr>
+                  <?php
+                  
+                  }
+                ?>
+          
  </table>
-              </div>
-            </div>
           </div>
+           </div>
+         </div>
         </div>
       </main>
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

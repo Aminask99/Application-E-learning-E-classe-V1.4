@@ -7,59 +7,70 @@ function validation() {
     let check=true
     let formLabels = document.getElementsByTagName("input");
     let UserName = document.cfrForm.UserName.value;
-    if (UserName == "") {
-        formLabels[0].style.border = "2px solid green";
+    if (UserName == "")
+    {
+        formLabels[0].style.border = "2px solid red";
         check=false
-        // e.preventDefault()
-    } else if (!isNaN(UserName)) {
-        formLabels[0].style.border = "2px solid green";
+     
+    } else if (!isNaN(UserName)) 
+    {
+        formLabels[0].style.border = "2px solid red";
         check=false
-
-        // e.preventDefault()
     }
-    // else{
-    //     formLabels[0].style.border = "";
-    // }
+    else 
+    {
+    formLabels[0].style.border = "2px solid green";
+    }
+    
+
     let Email = document.cfrForm.Email.value;
-    if (Email == "") {
-        formLabels[1].style.border = "2px solid green";
+    
+    if (Email == "")
+    {
+        formLabels[1].style.border = "2px solid red";
         check=false
 
-        // e.preventDefault()
-    } else if (!isNaN(Email)) {
-        formLabels[1].style.border = "2px solid green";
-        check=false
-
-        // e.preventDefault()
     }
+    else 
+    {
+    formLabels[1].style.border = "2px solid green";
+    }
+
     let password = document.cfrForm.password.value;
-    if (password == "") {
-        formLabels[2].style.border = "2px solid green";
+    if (password == "") 
+    {
+        formLabels[2].style.border = "2px solid red";
         check=false
 
-        // e.preventDefault()
+       
+    } else if (password.lenght < 6) 
+    {
+        formLabels[2].style.border = "2px solid red";
+        check=false
     }
-    // else if (!isNaN(Email)){
-    //     formLabels[2].style.border="2px solid red";
-    //     valid = false
-    //     // e.preventDefault()
-    // }
-
-    // e.preventDefault()
+    else 
+    {
+    formLabels[2].style.border = "2px solid green";
+    }
+    
     let C_Password = document.cfrForm.C_Password.value;
-    if (C_Password == "") {
-        formLabels[3].style.border = "2px solid green";
+    
+    if (C_Password == "")
+    {
+        formLabels[3].style.border = "2px solid red";
+       
+         check=false
+        
+    }else if (C_Password != password){
+        formLabels[3].style.border = "2px solid red";
+       
         check=false
-
-        // e.preventDefault()
     }
-    // else if (!isNaN(C_Password)){
-    //     formLabels[3].style.border="2px solid red";
-    //     valid = false
-    //     // e.preventDefault()
-    // }
-
-
+    else 
+    {
+    formLabels[0].style.border = "2px solid green";
+    }
+    
     return check
 
 }

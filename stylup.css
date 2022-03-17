@@ -1,0 +1,29 @@
+body 
+{
+
+     background: linear-gradient(69.66deg, #00C1FE 19.39%, #FAFFC1 96.69%);
+     width: 100%;
+     height: 100px;
+}
+ .cont
+{
+     width: 100%;
+     transform: translateY(50px);
+}
+ .contain {
+
+     border-radius: 20px;
+     height: 580px;
+   
+}
+
+.href
+{
+      font-size: 10px;
+}
+  @media screen and (max-width: 576px) {
+       body
+    {
+     background: white;
+    }
+}

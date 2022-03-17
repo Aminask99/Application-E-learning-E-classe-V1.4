@@ -1,5 +1,5 @@
 <?php
-    require'cnx.php';
+    require 'cnx.php';
 
     $id = $_GET['id'];
     $req = "DELETE FROM listt_student where id = '$id' ";

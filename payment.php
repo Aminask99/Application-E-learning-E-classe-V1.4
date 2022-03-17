@@ -47,7 +47,7 @@ require 'cnx.php';
 
     .side-bar {
       background-color: #fff;
-      height: 820px;
+      height: 930px;
       width:200px;
      
     }
@@ -56,9 +56,9 @@ require 'cnx.php';
       width: 70px;
     }
     .Logout{
-      transform: translateY(88Px);
-      margin-left: 26px;
-    }
+      /* transform: translateY(10Px); */
+    margin-left: 26px;
+  }
     
     @media screen and (min-width: 576px) {
       .side-bar {

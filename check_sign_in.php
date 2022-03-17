@@ -26,6 +26,7 @@
 							if($_SESSION["password"] == $row["password"])
 							{
 								$_SESSION["username"] = $row["UserName"];
+								
 								$_SESSION["active"] = "true";
 
 								if($_POST["check"] == "on")
